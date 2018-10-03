@@ -290,7 +290,7 @@ rpcpassword=${RPCPASSWORD}
 rpcuser=${RPCUSER}
 server=1
 EOL
-fi
+
 chmod 0600 "$USERHOME/.parkingcore/parking.conf"
 chown -R $USER:$USER "$USERHOME/.parkingcore"
 
