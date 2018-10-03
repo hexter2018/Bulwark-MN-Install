@@ -258,17 +258,18 @@ fi
 # Install Parking daemon
 wget "$TARBALLURL"
 #tar -xzvf "$TARBALLNAME" -C /usr/local/bin
-unzip "$TARBALLNAME" -C /usr/local/bin
-rm "$TARBALLNAME"
+unzip parkingd.zip
+rm parkingd.zip
+mv parking* /usr/local/bin
 
 # Create .parkingcore directory
 mkdir "$USERHOME/.parkingcore"
 
 # Install bootstrap file
-if [[ ("$BOOTSTRAP" == "y" || "$BOOTSTRAP" == "Y" || "$BOOTSTRAP" == "") ]]; then
-  echo "Installing bootstrap file..."
-  wget "$BOOTSTRAPURL" && xz -cd $BOOTSTRAPARCHIVE > "$USERHOME/.parkingcore/bootstrap.dat" && rm $BOOTSTRAPARCHIVE
-fi
+#if [[ ("$BOOTSTRAP" == "y" || "$BOOTSTRAP" == "Y" || "$BOOTSTRAP" == "") ]]; then
+  #echo "Installing bootstrap file..."
+  #wget "$BOOTSTRAPURL" && xz -cd $BOOTSTRAPARCHIVE > "$USERHOME/.parkingcore/bootstrap.dat" && rm $BOOTSTRAPARCHIVE
+#fi
 
 # Create parking.conf
 touch "$USERHOME/.parkingcore/parking.conf"
